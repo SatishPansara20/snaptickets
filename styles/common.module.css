@@ -1,0 +1,389 @@
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.w_100 {
+  width: 100%;
+}
+
+.w_50 {
+  width: 50%;
+}
+
+.h_100 {
+  height: 100%;
+}
+
+.h_50 {
+  height: 50%;
+}
+
+.d_inline-block {
+  display: inline-block;
+}
+
+.d_none {
+  display: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.d_flex {
+  display: flex;
+}
+
+.d_flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.d_grid {
+  display: grid;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.justify_end {
+  justify-content: flex-end;
+}
+
+.justify_evenly {
+  justify-content: space-evenly;
+}
+.justify_around {
+  justify-content: space-around;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.align_center {
+  align-items: center;
+}
+
+.align_start {
+  align-items: flex-start;
+}
+
+.align_end {
+  align-items: flex-end;
+}
+
+.grow {
+  flex-grow: 1;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.wrap_initial {
+  flex-wrap: initial;
+}
+
+/* gap */
+
+.gap_5 {
+  gap: 5px;
+}
+.gap_10 {
+  gap: 10px;
+}
+
+.gap_12 {
+  gap: 12px;
+}
+.gap_15 {
+  gap: 15px;
+}
+
+.gap_18 {
+  gap: 18px;
+}
+.gap_20 {
+  gap: 20px;
+}
+.gap_25 {
+  gap: 25px;
+}
+
+.gap_30 {
+  gap: 30px;
+}
+
+.gap_35 {
+  gap: 35px;
+}
+
+.gap_40 {
+  gap: 40px;
+}
+
+.gap_60 {
+  gap: 60px;
+}
+
+.gap_80 {
+  gap: 80px;
+}
+
+.gap_100 {
+  gap: 100px;
+}
+
+.root_section {
+  width: 100%;
+  height: 100%;
+}
+
+/* Margin bottom */
+
+.mr_l_40 {
+  margin-left: 40px;
+}
+
+.mr_r_33 {
+  margin-right: 33px;
+}
+
+.mr_r_35 {
+  margin-right: 35px;
+}
+
+.mr_r_40 {
+  margin-right: 40px;
+}
+
+.mr_r_45 {
+  margin-right: 45px;
+}
+
+.mr_r_53 {
+  margin-right: 53px;
+}
+
+.mr_b_10 {
+  margin-bottom: 10px;
+}
+
+.mr_b_18 {
+  margin-bottom: 18px;
+}
+
+.mr_b_20 {
+  margin-bottom: 20px;
+}
+
+.mr_b_22 {
+  margin-bottom: 22px;
+}
+
+.mr_b_30 {
+  margin-bottom: 30px;
+}
+
+.mr_b_35 {
+  margin-bottom: 35px;
+}
+
+.mr_b_45 {
+  margin-bottom: 45px;
+}
+
+.mr_b_60 {
+  margin-bottom: 60px;
+}
+
+.mr_t_5 {
+  margin-top: 5px;
+}
+.mr_t_10 {
+  margin-top: 10px;
+}
+
+.mr_t_20 {
+  margin-top: 20px;
+}
+.mr_t_25 {
+  margin-top: 25px;
+}
+
+.mr_t_50 {
+  margin-top: 50px;
+}
+
+.mr_t_90 {
+  margin-top: 90px;
+}
+
+.p_15 {
+  padding: 15px;
+}
+/* Padding bottom */
+.pd_b_30 {
+  padding-bottom: 30px;
+}
+
+.z_index-1 {
+  z-index: 1;
+}
+
+.z_index-2 {
+  z-index: 2;
+}
+
+.z_index-3 {
+  z-index: 3;
+}
+
+.font_weight_300 {
+  font-weight: 300;
+}
+
+.font_weight_400 {
+  font-weight: 400;
+}
+
+.font_weight_500 {
+  font-weight: 500;
+}
+
+.font_weight_700 {
+  font-weight: 700;
+}
+
+.font_size_14 {
+  font-size: 14px;
+}
+
+.font_size_18 {
+  font-size: 18px;
+}
+
+.font_size_16 {
+  font-size: 16px;
+}
+
+.font_size_20 {
+  font-size: 20px;
+}
+
+.font_size_24 {
+  font-size: 24px;
+}
+
+.line_height_18 {
+  line-height: 18px;
+}
+
+.line_height_21 {
+  line-height: 21px;
+}
+
+.line_height_24 {
+  line-height: 24px;
+}
+
+.line_height_29 {
+  line-height: 29px;
+}
+
+.line_height_36 {
+  line-height: 36px;
+}
+
+.line_height_41 {
+  line-height: 41px;
+}
+
+.line_height_120 {
+  line-height: 120px;
+}
+
+.bg_color {
+  background-color: var(--primary_1);
+}
+
+.header_font {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #25292b;
+}
+
+.font_heading_common {
+  font-weight: 700;
+  font-size: 36px;
+  /* line-height: 43px; */
+  letter-spacing: 0.016em;
+  color: var(--heding_color);
+}
+
+.font_p_common {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.btn_common {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 100px;
+}
+
+.btn_1 {
+  background-color: var(--btn_background);
+  backdrop-filter: blur(5px);
+  border: none;
+
+  color: #ffffff;
+}
+
+.btn_2 {
+  background-color: #ffffff;
+  border: 1px solid #a020f0;
+  color: #a020f0;
+}
+
+.btn_3 {
+  min-width: 167px;
+  height: 44px;
+  border-radius: 22px;
+}
+
+.box_shodow {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media only screen and (max-width: 385px) {
+  .font_heading_common {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.016em;
+    color: var(--heding_color);
+  }
+}

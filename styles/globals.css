@@ -1,0 +1,63 @@
+@import "/font/Pooines/stylesheet.css";
+
+/******* ================================Reset============================== *******/
+:root {
+  --primary_1: #f9f7ff;
+  --heding_color: #381589;
+  --btn_background: #381589;
+
+  --card_month: #7848f4;
+  --card_date: #131315;
+  --card_heading: #2a3038;
+  --card_sub_heading: #8d95a0;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input,
+button {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  border: none;
+}
+textarea:focus {
+  outline: none;
+}
+
+/* figure img {
+  width: 100%;
+  height: 100%;
+} */
+
+header Image {
+  cursor: pointer;
+}
+
+footer a{
+  color: white !important;
+}
