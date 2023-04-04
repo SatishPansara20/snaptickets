@@ -113,7 +113,6 @@ export default function Home() {
 
     if (toggleflag) {
       console.log("open");
-
       navToggle_header_links?.classList.remove(class_1);
       navToggle_header_links?.classList.add(class_2);
       toggleflag = false;
@@ -127,12 +126,6 @@ export default function Home() {
     console.log(navToggle_header_links);
   };
 
-  const pagination = {
-    renderBullet: function (index: number, className: string) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-    bulletActiveClass: `${styles["swiper-pagination-bullet-active"]}`,
-  };
 
   return (
     <>
@@ -251,6 +244,7 @@ export default function Home() {
               priority
             />
           </button>
+          
         </div>
 
         {/* nav Toggle */}
@@ -444,7 +438,9 @@ export default function Home() {
                 priority
               />
             </SwiperSlide>
+
           </Swiper>
+
         </section>
 
         {/* section 2 */}
@@ -812,6 +808,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
       </main>
 
       <footer className={[styles.footer].join(" ")}>
