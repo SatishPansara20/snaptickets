@@ -126,7 +126,6 @@ export default function Home() {
     console.log(navToggle_header_links);
   };
 
-
   return (
     <>
       <Head>
@@ -244,7 +243,6 @@ export default function Home() {
               priority
             />
           </button>
-          
         </div>
 
         {/* nav Toggle */}
@@ -438,9 +436,7 @@ export default function Home() {
                 priority
               />
             </SwiperSlide>
-
           </Swiper>
-
         </section>
 
         {/* section 2 */}
@@ -705,8 +701,9 @@ export default function Home() {
             className={[
               common.container,
               common.d_flex,
-              common.align_center,
+              common.justify_center,
               styles.section_4_root,
+              common.relative,
             ].join(" ")}
           >
             {/* sectin 4 left */}
@@ -808,7 +805,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </main>
 
       <footer className={[styles.footer].join(" ")}>
