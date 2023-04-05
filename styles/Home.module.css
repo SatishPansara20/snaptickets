@@ -395,6 +395,10 @@
   .section_4 {
     height: fit-content;
   }
+  
+  .section_4_left{
+    gap:15px;
+  }
 
   .footer {
     height: 400px;
