@@ -5,8 +5,9 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 import common from "@/styles/common.module.css";
+import Home from "./screen/home";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Head>
@@ -19,9 +20,10 @@ export default function Home() {
       <main
         className={[common.container, common.w_100, common.h_100,common.d_flex_column].join(" ")}
       >
-        <div className="container  mx-auto flex flex-col">
+        {/* <div className="container  mx-auto flex flex-col">
           <Link href={"/screen/home"}>All writers List</Link>
-        </div>
+        </div> */}
+        <Home/>
       </main>
     </>
   );
