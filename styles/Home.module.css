@@ -104,12 +104,6 @@
 /* ==================                  Main                 ============================= */
 /* ====================================================================================== */
 
-.main {
-  display: flex;
-  flex-direction: column;
-  margin-top: 81px;
-}
-
 /* =======================================     section 1      ============================================ */
 
 .section_1 {
@@ -266,9 +260,12 @@
 /*============================================= footer ======================================== */
 
 .footer {
-  height: 300px;
+  /* position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0; */
+  height: 200px;
   background-color: #381589;
-  justify-content: space-between;
 }
 
 .footer_links {
@@ -395,13 +392,13 @@
   .section_4 {
     height: fit-content;
   }
-  
-  .section_4_left{
-    gap:15px;
+
+  .section_4_left {
+    gap: 15px;
   }
 
   .footer {
-    height: 400px;
+    height: 320px;
   }
 }
 

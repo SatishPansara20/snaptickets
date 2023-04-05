@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 import styles from "@/styles/Home.module.css";
 import common from "@/styles/common.module.css";
 
-
 const cards = [
   {
     id: 1,
@@ -93,9 +92,6 @@ const cards_2 = [
 ];
 
 export default function Home() {
-
-
-
   return (
     <>
       <Head>
@@ -105,267 +101,335 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-    
+      {/* section 1 */}
+      <section className={[styles.section_1, common.relative].join(" ")}>
+        <Swiper
+          pagination={{
+            clickable: true,
+            type: "bullets",
+            renderBullet: function (index: number, className: string) {
+              return '<span class="' + className + '"> </span>';
+            },
+            bulletActiveClass: `${styles["swiper-pagination-bullet-active"]}`,
+            bulletClass: `${styles["swiper-pagination-bullet"]}`,
+          }}
+          className={[styles.swiper].join(" ")}
+          modules={[Pagination, Autoplay]}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+        >
+          <SwiperSlide className={[styles.swiperslide].join(" ")}>
+            <Image
+              src="/images/section_1_bg_image.png"
+              fill
+              sizes="(max-width:100vw)  (max-height:  600px) "
+              alt="LOGO"
+              priority
+            />
+          </SwiperSlide>
 
-      <main className={[styles.main, common.bg_color].join(" ")}>
+          <SwiperSlide className={[styles.swiperslide].join(" ")}>
+            <Image
+              src="/images/section_1_bg_image.png"
+              fill
+              sizes="(max-width:100vw)  (max-height:  600px) "
+              alt="LOGO"
+              priority
+            />
+          </SwiperSlide>
 
-        {/* section 1 */}
-        <section className={[styles.section_1, common.relative].join(" ")}>
-       
-          <Swiper
-            pagination={{
-              clickable: true,
-              type: "bullets",
-              renderBullet: function (index: number, className: string) {
-                return '<span class="' + className + '"> </span>';
-              },
-              bulletActiveClass: `${styles["swiper-pagination-bullet-active"]}`,
-              bulletClass: `${styles["swiper-pagination-bullet"]}`,
-            }}
-            className={[styles.swiper].join(" ")}
-            modules={[Pagination, Autoplay]}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
-          >
+          <SwiperSlide>
+            <Image
+              src="/images/section_1_bg_image.png"
+              fill
+              sizes="(max-width:100vw)  (max-height:  600px) "
+              alt="LOGO"
+              priority
+            />
+          </SwiperSlide>
 
-            <SwiperSlide className={[styles.swiperslide].join(" ")}>
-              <Image
-                src="/images/section_1_bg_image.png"
-                fill
-                sizes="(max-width:100vw)  (max-height:  600px) "
-                alt="LOGO"
-                priority
-              />
-            </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/images/section_1_bg_image.png"
+              fill
+              sizes="(max-width:100vw)  (max-height:  600px) "
+              alt="LOGO"
+              priority
+            />
+          </SwiperSlide>
+        </Swiper>
+      </section>
 
-            <SwiperSlide className={[styles.swiperslide].join(" ")}>
-              <Image
-                src="/images/section_1_bg_image.png"
-                fill
-                sizes="(max-width:100vw)  (max-height:  600px) "
-                alt="LOGO"
-                priority
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Image
-                src="/images/section_1_bg_image.png"
-                fill
-                sizes="(max-width:100vw)  (max-height:  600px) "
-                alt="LOGO"
-                priority
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Image
-                src="/images/section_1_bg_image.png"
-                fill
-                sizes="(max-width:100vw)  (max-height:  600px) "
-                alt="LOGO"
-                priority
-              />
-            </SwiperSlide>
-
-          </Swiper>
-        </section>
-
-        {/* section 2 */}
-        <section className={[styles.section_2, common.width_100].join(" ")}>
-          <div
+      {/* section 2 */}
+      <section className={[styles.section_2, common.width_100].join(" ")}>
+        <div
+          className={[
+            common.container,
+            common.d_flex_column,
+            common.align_center,
+            common.gap_15,
+          ].join(" ")}
+        >
+          <h2
             className={[
-              common.container,
-              common.d_flex_column,
-              common.align_center,
-              common.gap_15,
+              common.line_height_120,
+              common.font_heading_common,
+              common.w_100,
+              common.d_flex,
+              common.justify_start,
+              styles.section_2_h2_1,
             ].join(" ")}
           >
-            <h2
-              className={[
-                common.line_height_120,
-                common.font_heading_common,
-                common.w_100,
-                common.d_flex,
-                common.justify_start,
-                styles.section_2_h2_1,
-              ].join(" ")}
-            >
-              Upcoming Events
-            </h2>
+            Upcoming Events
+          </h2>
 
-            {/*===== Cards ========== */}
+          {/*===== Cards ========== */}
 
-            <div
-              className={[
-                common.d_flex,
-                common.wrap,
-                styles.section_2_card_root,
-                common.gap_20,
-              ].join(" ")}
-            >
-              {cards.map((card) => {
-                return (
+          <div
+            className={[
+              common.d_flex,
+              common.wrap,
+              styles.section_2_card_root,
+              common.gap_20,
+            ].join(" ")}
+          >
+            {cards.map((card) => {
+              return (
+                <div
+                  key={card.id}
+                  className={[common.d_flex_column, styles.section_2_card].join(
+                    " "
+                  )}
+                >
+                  <Image
+                    className={[styles.s_2_img_1].join(" ")}
+                    src={card.image}
+                    width={385}
+                    height={216}
+                    alt="LOGO"
+                    priority
+                  />
+
                   <div
-                    key={card.id}
                     className={[
                       common.d_flex_column,
-                      styles.section_2_card,
+                      common.gap_15,
+                      styles.section_card_content,
                     ].join(" ")}
                   >
-                    <Image
-                      className={[styles.s_2_img_1].join(" ")}
-                      src={card.image}
-                      width={385}
-                      height={216}
-                      alt="LOGO"
-                      priority
-                    />
-
                     <div
                       className={[
-                        common.d_flex_column,
+                        common.d_flex,
+                        styles.section_card_content_1,
                         common.gap_15,
-                        styles.section_card_content,
                       ].join(" ")}
                     >
                       <div
-                        className={[
-                          common.d_flex,
-                          styles.section_card_content_1,
-                          common.gap_15,
-                        ].join(" ")}
+                        className={[common.d_flex_column, common.gap_5].join(
+                          " "
+                        )}
                       >
-                        <div
-                          className={[common.d_flex_column, common.gap_5].join(
-                            " "
-                          )}
-                        >
-                          <h2
-                            className={[
-                              styles.card_month,
-                              common.font_weight_400,
-                              common.font_size_24,
-                              common.line_height_29,
-                            ].join(" ")}
-                          >
-                            {card.month}
-                          </h2>
-
-                          <h2
-                            className={[
-                              styles.card_date,
-                              common.font_weight_500,
-                              common.font_size_24,
-                              common.line_height_29,
-                            ].join(" ")}
-                          >
-                            {card.date}
-                          </h2>
-                        </div>
-
-                        <div
+                        <h2
                           className={[
-                            common.d_flex_column,
-                            common.wrap_initial,
+                            styles.card_month,
+                            common.font_weight_400,
+                            common.font_size_24,
+                            common.line_height_29,
                           ].join(" ")}
                         >
-                          <h3
-                            className={[
-                              styles.card_heading,
-                              common.font_weight_500,
-                              common.font_size_20,
-                            ].join(" ")}
-                          >
-                            {card.heading}
-                          </h3>
+                          {card.month}
+                        </h2>
 
-                          <p
-                            className={[
-                              styles.card_sub_heading,
-                              common.font_weight_300,
-                              common.font_size_16,
-                              common.line_height_18,
-                            ].join(" ")}
-                          >
-                            {card.sub_heading}{" "}
-                          </p>
-                          <p
-                            className={[
-                              styles.card_price,
-                              common.font_weight_500,
-                              common.font_size_16,
-                              common.line_height_18,
-                              common.mr_t_10,
-                            ].join(" ")}
-                          >
-                            {card.price}
-                          </p>
-                        </div>
+                        <h2
+                          className={[
+                            styles.card_date,
+                            common.font_weight_500,
+                            common.font_size_24,
+                            common.line_height_29,
+                          ].join(" ")}
+                        >
+                          {card.date}
+                        </h2>
                       </div>
 
-                      <hr className={[styles.card_hr].join(" ")} />
                       <div
                         className={[
-                          common.d_flex,
-                          common.gap_10,
-                          common.justify_center,
-                          common.mr_t_10,
-                          common.mr_b_18,
-                          styles.card_btn_root,
+                          common.d_flex_column,
+                          common.wrap_initial,
                         ].join(" ")}
                       >
-                        <button
+                        <h3
                           className={[
-                            common.btn_common,
-                            common.btn_1,
-                            styles.card_btn,
+                            styles.card_heading,
+                            common.font_weight_500,
+                            common.font_size_20,
                           ].join(" ")}
                         >
-                          BUY TICKETS
-                        </button>
-                        <button
+                          {card.heading}
+                        </h3>
+
+                        <p
                           className={[
-                            common.btn_common,
-                            common.btn_2,
-                            styles.card_btn,
+                            styles.card_sub_heading,
+                            common.font_weight_300,
+                            common.font_size_16,
+                            common.line_height_18,
                           ].join(" ")}
                         >
-                          READ MORE
-                        </button>
+                          {card.sub_heading}{" "}
+                        </p>
+                        <p
+                          className={[
+                            styles.card_price,
+                            common.font_weight_500,
+                            common.font_size_16,
+                            common.line_height_18,
+                            common.mr_t_10,
+                          ].join(" ")}
+                        >
+                          {card.price}
+                        </p>
                       </div>
                     </div>
+
+                    <hr className={[styles.card_hr].join(" ")} />
+                    <div
+                      className={[
+                        common.d_flex,
+                        common.gap_10,
+                        common.justify_center,
+                        common.mr_t_10,
+                        common.mr_b_18,
+                        styles.card_btn_root,
+                      ].join(" ")}
+                    >
+                      <button
+                        className={[
+                          common.btn_common,
+                          common.btn_1,
+                          styles.card_btn,
+                        ].join(" ")}
+                      >
+                        BUY TICKETS
+                      </button>
+                      <button
+                        className={[
+                          common.btn_common,
+                          common.btn_2,
+                          styles.card_btn,
+                        ].join(" ")}
+                      >
+                        READ MORE
+                      </button>
+                    </div>
                   </div>
-                );
-              })}
-            </div>
-
-            <button
-              className={[
-                common.btn_3,
-                common.mr_b_10,
-                styles.btn_view_all,
-              ].join(" ")}
-            >
-              VIEW ALL
-            </button>
+                </div>
+              );
+            })}
           </div>
-        </section>
 
-        {/* section 3 */}
+          <button
+            className={[common.btn_3, common.mr_b_10, styles.btn_view_all].join(
+              " "
+            )}
+          >
+            VIEW ALL
+          </button>
+        </div>
+      </section>
 
-        <section className={[styles.section_3, common.width_100].join(" ")}>
+      {/* section 3 */}
+
+      <section className={[styles.section_3, common.width_100].join(" ")}>
+        <div
+          className={[
+            common.container,
+            common.d_flex_column,
+            common.mr_t_50,
+            // common.align_center,
+            // common.gap_15,
+          ].join(" ")}
+        >
+          <h2
+            className={[
+              common.line_height_43,
+              common.font_heading_common,
+              common.w_100,
+              common.d_flex,
+              common.justify_start,
+            ].join(" ")}
+          >
+            Becoming A Registered User
+            <br />
+            is Easy and The Smart Way to go!
+          </h2>
+
+          {/* section 3  card  */}
           <div
             className={[
-              common.container,
+              common.mr_t_25,
+              common.mr_b_35,
+              common.d_grid,
+              common.gap_20,
+              styles.section_3_card_root,
+            ].join(" ")}
+          >
+            {cards_2.map((card) => {
+              return (
+                <div
+                  key={card.id}
+                  className={[common.d_flex_column, styles.section_3_card].join(
+                    " "
+                  )}
+                >
+                  <h2
+                    className={[
+                      common.font_weigh_700,
+                      common.font_size_24,
+                      common.line_height_29,
+                      common.d_flex_column,
+                      // common.gap_40,
+                    ].join(" ")}
+                  >
+                    <span className={[styles.section_3_card_span_1].join(" ")}>
+                      {card.id}
+                    </span>
+                    <span className={[styles.section_3_card_span_2].join(" ")}>
+                      {card.heading}
+                    </span>
+                  </h2>
+                  <p className={[styles.font_p_common].join(" ")}>
+                    {card.desctiption}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* section 4 */}
+      <section className={[common.width_100, styles.section_4].join(" ")}>
+        <div
+          className={[
+            common.container,
+            common.d_flex,
+            common.justify_center,
+            styles.section_4_root,
+            common.relative,
+          ].join(" ")}
+        >
+          {/* sectin 4 left */}
+          <div
+            className={[
+              styles.section_4_left,
               common.d_flex_column,
-              common.mr_t_50,
-              // common.align_center,
-              // common.gap_15,
+              common.justify_evenly,
+              common.w_50,
             ].join(" ")}
           >
             <h2
@@ -377,172 +441,87 @@ export default function Home() {
                 common.justify_start,
               ].join(" ")}
             >
-              Becoming A Registered User
-              <br />
-              is Easy and The Smart Way to go!
+              Becoming An Event Organizer
             </h2>
+            <p className={[styles.font_p_common].join(" ")}>
+              Access every show, even those that are sold out. <br />
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&#39;s standard dummy
+              text ever since the 1500s, when an unknown printer took a galley
+              of type and scrambled it to make a type specimen book.
+            </p>
 
-            {/* section 3  card  */}
-            <div
-              className={[
-                common.mr_t_25,
-                common.mr_b_35,
-                common.d_grid,
-                common.gap_20,
-                styles.section_3_card_root,
-              ].join(" ")}
+            <button
+              className={[common.btn_3, styles.btn_contanct_us].join(" ")}
             >
-              {cards_2.map((card) => {
-                return (
-                  <div
-                    key={card.id}
-                    className={[
-                      common.d_flex_column,
-                      styles.section_3_card,
-                    ].join(" ")}
-                  >
-                    <h2
-                      className={[
-                        common.font_weigh_700,
-                        common.font_size_24,
-                        common.line_height_29,
-                        common.d_flex_column,
-                        // common.gap_40,
-                      ].join(" ")}
-                    >
-                      <span
-                        className={[styles.section_3_card_span_1].join(" ")}
-                      >
-                        {card.id}
-                      </span>
-                      <span
-                        className={[styles.section_3_card_span_2].join(" ")}
-                      >
-                        {card.heading}
-                      </span>
-                    </h2>
-                    <p className={[styles.font_p_common].join(" ")}>
-                      {card.desctiption}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+              CONTACT US
+            </button>
           </div>
-        </section>
 
-        {/* section 4 */}
-        <section className={[common.width_100, styles.section_4].join(" ")}>
+          {/* sectin 4 right */}
           <div
             className={[
-              common.container,
-              common.d_flex,
-              common.justify_center,
-              styles.section_4_root,
+              styles.section_4_right,
+              common.d_flex_column,
+              common.w_50,
               common.relative,
             ].join(" ")}
           >
-            {/* sectin 4 left */}
-            <div
+            <figure
               className={[
-                styles.section_4_left,
-                common.d_flex_column,
-                common.justify_evenly,
-                common.w_50,
-              ].join(" ")}
-            >
-              <h2
-                className={[
-                  common.line_height_43,
-                  common.font_heading_common,
-                  common.w_100,
-                  common.d_flex,
-                  common.justify_start,
-                ].join(" ")}
-              >
-                Becoming An Event Organizer
-              </h2>
-              <p className={[styles.font_p_common].join(" ")}>
-                Access every show, even those that are sold out. <br />
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&#39;s standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-
-              <button
-                className={[common.btn_3, styles.btn_contanct_us].join(" ")}
-              >
-                CONTACT US
-              </button>
-            </div>
-
-            {/* sectin 4 right */}
-            <div
-              className={[
-                styles.section_4_right,
-                common.d_flex_column,
-                common.w_50,
+                styles.section_4_right_figure_1,
+                common.d_flex,
+                common.justify_center,
+                common.align_center,
+                common.w_100,
+                common.h_100,
                 common.relative,
               ].join(" ")}
             >
-              <figure
-                className={[
-                  styles.section_4_right_figure_1,
-                  common.d_flex,
-                  common.justify_center,
-                  common.align_center,
-                  common.w_100,
-                  common.h_100,
-                  common.relative,
-                ].join(" ")}
-              >
-                <Image
-                  src="/images/section_4_ellipse.png"
-                  alt="ellipse"
-                  width={167}
-                  height={321}
-                />
-              </figure>
+              <Image
+                src="/images/section_4_ellipse.png"
+                alt="ellipse"
+                width={167}
+                height={321}
+              />
+            </figure>
 
-              <figure
+            <figure
+              className={[
+                styles.section_4_right_figure_2,
+                common.d_flex,
+                common.justify_center,
+                common.align_center,
+                common.w_100,
+                common.h_100,
+                common.absolute,
+              ].join(" ")}
+            >
+              <Image
+                src="/images/section_4_circle.png"
+                alt="ellipse"
+                width={284}
+                height={284}
+              />
+              <p
                 className={[
-                  styles.section_4_right_figure_2,
                   common.d_flex,
                   common.justify_center,
                   common.align_center,
                   common.w_100,
                   common.h_100,
                   common.absolute,
+                  common.font_heading_common,
+                  common.line_height_41,
+                  styles.section_4_circle_content,
                 ].join(" ")}
               >
-                <Image
-                  src="/images/section_4_circle.png"
-                  alt="ellipse"
-                  width={284}
-                  height={284}
-                />
-                <p
-                  className={[
-                    common.d_flex,
-                    common.justify_center,
-                    common.align_center,
-                    common.w_100,
-                    common.h_100,
-                    common.absolute,
-                    common.font_heading_common,
-                    common.line_height_41,
-                    styles.section_4_circle_content,
-                  ].join(" ")}
-                >
-                  Organizer
-                </p>
-              </figure>
-            </div>
+                Organizer
+              </p>
+            </figure>
           </div>
-        </section>
-      </main>
-
+        </div>
+      </section>
     </>
   );
 }

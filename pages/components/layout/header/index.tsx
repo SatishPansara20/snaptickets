@@ -31,7 +31,6 @@ export default function Navigation({}: Props) {
   }, []);
 
   const handleClick = () => {
-    
     const class_1 = `${common.d_none}`;
 
     const class_2 = `${styles.navToggle_header_link}`;
@@ -48,12 +47,16 @@ export default function Navigation({}: Props) {
       toggleflag = true;
     }
 
-    console.log(navToggle_header_links);
+    // console.log(navToggle_header_links);
+  };
+
+  const handleLinkClink = () => {
+    toggleflag = false;
   };
 
   return (
     <>
-      <header className={[styles.header].join(" ")}>
+      <header className={[styles.header,common.w_100].join(" ")}>
         <div
           className={[
             common.container,
@@ -82,7 +85,10 @@ export default function Navigation({}: Props) {
             ].join(" ")}
           >
             <li>
-              <Link className={[common.header_font].join(" ")} href={"/"}>
+              <Link
+                className={[common.header_font].join(" ")}
+                href={"/screen/dashboard"}
+              >
                 Organizer
               </Link>
             </li>
@@ -168,7 +174,8 @@ export default function Navigation({}: Props) {
         <ul id="navToggle_header_links" className={common.d_none}>
           <li className={[common.d_inline_block, common.w_100].join(" ")}>
             <Link
-              href=""
+              onClick={handleClick}
+              href={"/screen/dashboard"}
               className={[
                 common.header_font,
                 common.w_100,
@@ -182,6 +189,7 @@ export default function Navigation({}: Props) {
 
           <li className={[common.d_inline_block, common.w_100].join(" ")}>
             <Link
+              onClick={handleClick}
               href=""
               className={[
                 common.header_font,
@@ -196,6 +204,7 @@ export default function Navigation({}: Props) {
 
           <li className={[common.d_inline_block, common.w_100].join(" ")}>
             <Link
+              onClick={handleClick}
               href=""
               className={[
                 common.header_font,
@@ -221,6 +230,7 @@ export default function Navigation({}: Props) {
                 // common.btn_1,
                 // styles.header_btn,
               ].join(" ")}
+              onClick={handleClick}
             >
               SIGN UP
             </button>
@@ -239,6 +249,7 @@ export default function Navigation({}: Props) {
                 // common.btn_2,
                 // styles.header_btn,
               ].join(" ")}
+              onClick={handleClick}
             >
               LOGIN
             </button>
@@ -260,6 +271,7 @@ export default function Navigation({}: Props) {
               ].join(" ")}
             >
               <figure
+                onClick={handleClick}
                 className={[common.d_flex, common.align_center].join(" ")}
               >
                 <Image
