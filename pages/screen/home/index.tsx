@@ -117,10 +117,10 @@ export default function Home() {
           modules={[Pagination, Autoplay]}
           slidesPerView={1}
           loop={true}
-          autoplay={{
-            delay: 1500,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 1500,
+          //   disableOnInteraction: false,
+          // }}
         >
           <SwiperSlide className={[styles.swiperslide].join(" ")}>
             <Image

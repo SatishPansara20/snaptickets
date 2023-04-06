@@ -2,11 +2,12 @@
 
 .header {
   width: 100%;
+  display: flex;
   padding: 15px 0;
   background-color: #ffffff;
-  position: fixed;
+  position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 999;
 }
 .header_logo {
   max-width: 241px;

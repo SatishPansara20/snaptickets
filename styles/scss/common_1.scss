@@ -1,11 +1,15 @@
-.root {
+.layout {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  min-height: 100%;
-}
+  height: 100vh;
+  position: relative;
 
-.root_main {
-  flex-grow: 1;
-  max-width: 100%;
+  .root_main {
+    position: relative;
+    flex: 1 1 auto;
+    overflow: auto;
+  }
 }
 
 .container {

@@ -56,7 +56,7 @@ export default function Navigation({}: Props) {
 
   return (
     <>
-      <header className={[styles.header,common.w_100].join(" ")}>
+      <header className={[styles.header].join(" ")}>
         <div
           className={[
             common.container,

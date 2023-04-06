@@ -1,5 +1,7 @@
 import { ReactElement, ReactPortal } from "react";
 
+import { FiArrowRight } from "react-icons/fi";
+
 import Header from "./header/index";
 import Footer from "./footer/index";
 
@@ -9,8 +11,6 @@ type ReactChild = ReactElement | ReactText;
 import React from "react";
 
 import Sidebar from "./sidebar/index";
-
-let flag = true;
 
 // let sidebar_toggle: HTMLElement | null;
 let sideBar: HTMLElement | null;
@@ -31,6 +31,8 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
+  const [flag, setFlag] = React.useState(true);
+
   React.useEffect(() => {
     if (window !== undefined) {
       // sidebar_toggle = document.getElementById("sidebarToggle");
@@ -40,44 +42,44 @@ export default function Layout({ children }: Props) {
   }, []);
 
   const handleClick = () => {
-    console.log(sideBar);
-
+    // console.log(sideBar);
     if (flag && sideBar && silder_toggle_icon) {
-      console.log(open);
-      sideBar.style.width = "400px";
+      // console.log(open);
+      // sideBar.style.left = "0";
       silder_toggle_icon.classList.add("tr-90");
-      flag = false;
+      sideBar.style.minWidth = "250px";
+      setFlag(false);
     } else if (flag === false && sideBar && silder_toggle_icon) {
-      sideBar.style.width = "40px";
+      // sideBar.style.left = "-200px";
+      sideBar.style.minWidth = "70px";
       silder_toggle_icon.classList.remove("tr-90");
-      console.log(close);
-
-      flag = true;
+      // console.log(close);
+      setFlag(true);
     }
   };
 
   return (
     <>
-      {/* <div className="d-flex root">
+      <div className="layout">
         <aside id="sidebar" className="aside">
           <button
             id="sidebarToggle"
             onClick={handleClick}
-            className="w-100 d-flex justify-end absolute z-index-3"
+            className="w-100 d-flex justify-end align-center"
           >
-            <p id="silderToggleIcon" className="silder_toggle_icon">
-              &gt;
-            </p>
+            <FiArrowRight
+              id="silderToggleIcon"
+              className="silder_toggle_icon"
+            />
           </button>
-          <Sidebar />
+          <Sidebar flag={flag} />
         </aside>
-
-        <div className="root_main"> */}
-      <Header />
-      <main>{children}</main>
-      <Footer />
-      {/* </div>
-      </div> */}
+        <div className="root_main">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
+      </div>
     </>
   );
 }
