@@ -91,7 +91,52 @@ const cards_2 = [
   },
 ];
 
+// let scrollContent: HTMLElement | null;
 export default function Home() {
+
+  React.useEffect(() => {
+
+
+    if (window !== undefined) {
+      // Scroll Animation
+      var scrollContent = document.querySelectorAll("section3");
+
+      if (scrollContent) {
+        console.log(scrollContent);
+
+        for (var i = 0; i < scrollContent?.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = scrollContent[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+
+          if (elementTop < windowHeight - elementVisible) {
+            scrollContent[i].classList.add("active");
+          } else {
+            scrollContent[i].classList.remove("active");
+          }
+        }
+      }
+    }
+
+  
+  }, []);
+
+  const hadleScroll = () => {
+    // if (scrollContent) {
+    //   console.log(scrollContent);
+    // for (var i = 0; i < scrollContent.length; i++) {
+    //   var windowHeight = window.innerHeight;
+    //   var elementTop = scrollContent[i].getBoundingClientRect().top;
+    //   var elementVisible = 150;
+    //   if (elementTop < windowHeight - elementVisible) {
+    //     scrollContent[i].classList.add("active");
+    //   } else {
+    //     scrollContent[i].classList.remove("active");
+    //   }
+    // }
+    // }
+  };
+
   return (
     <>
       <Head>
@@ -344,7 +389,14 @@ export default function Home() {
 
       {/* section 3 */}
 
-      <section className={[styles.section_3, common.width_100].join(" ")}>
+      <section
+        id="section3"
+        className={[
+          styles.section_3,
+          styles.scroll_animation,
+          common.width_100,
+        ].join(" ")}
+      >
         <div
           className={[
             common.container,

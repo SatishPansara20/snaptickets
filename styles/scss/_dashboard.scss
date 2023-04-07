@@ -7,3 +7,16 @@
   flex-grow: 1;
   width: 100%;
 }
+
+.my-class {
+  color: #e11010;
+  &-text {
+    font-size: 25px;
+  }
+
+  &-pera {
+    color: bisque;
+  }
+}
+
+

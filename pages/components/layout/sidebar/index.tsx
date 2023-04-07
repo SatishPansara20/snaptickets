@@ -8,7 +8,6 @@ interface IProps {
 let silder_link: HTMLElement | null;
 const Page = ({ flag }: IProps) => {
   React.useEffect(() => {
-    // console.log(flag);
     if (window !== undefined) {
       silder_link = document.getElementById("silder_link");
     }

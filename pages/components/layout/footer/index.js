@@ -5,8 +5,6 @@ import Image from "next/image";
 
 export default function index() {
   return (
-    // <div className="w-screen inset-x-0 bottom-0 shadow-inner mt-2  shadow-orange-100">
-    //   <div className="container mx-auto">
     <footer className={[styles.footer,common.w_100].join(" ")}>
       <div
         className={[
@@ -140,7 +138,5 @@ export default function index() {
         </p>
       </div>
     </footer>
-    //   </div>
-    // </div>
   );
 }

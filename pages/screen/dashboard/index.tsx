@@ -12,7 +12,10 @@ const Page = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        shjskhfs
+        <div className="my-class">
+          <div className="my-class-text">this is text</div>
+          <div className="my-class-pera">this is pera</div>
+        </div>
       </div>
     </>
   );

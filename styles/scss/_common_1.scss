@@ -9,6 +9,7 @@
     position: relative;
     flex: 1 1 auto;
     overflow: auto;
+    transition: opacity 0.5s ease-in;
   }
 }
 

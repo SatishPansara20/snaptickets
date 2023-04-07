@@ -474,3 +474,17 @@
     font-size: 14px !important;
   }
 }
+
+
+
+.scroll_animation {
+  position: relative;
+  transform: translateY(130px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.scroll_animation.active {
+  transform: translateY(0);
+  opacity: 1;
+}

@@ -13,8 +13,6 @@
   .silder_toggle_icon {
     height: 81px;
     font-size: 35px;
-    justify-content: center;
-    align-items: center;
   }
 
   .tr-90 {
@@ -49,5 +47,14 @@
     position: absolute;
     z-index: 1000;
     width: 35px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .aside {
+    width: 20px;
+    .silder_toggle_icon {
+      font-size: 25px;
+    }
   }
 }
