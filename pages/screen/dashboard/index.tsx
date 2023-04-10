@@ -1,6 +1,7 @@
 "use client";
 
 import Head from "next/head";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -11,10 +12,34 @@ const Page = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <div className="my-class">
-          <div className="my-class-text">this is text</div>
-          <div className="my-class-pera">this is pera</div>
+
+      <div className="row no-gutters dashbord">
+        <figure className=" dashbord-bg-1">
+          <Image
+            src="/images/dashboard_bg_1.png"
+            alt="background"
+            fill
+            sizes=" (max-width: 100%) 100vw,30vw"
+            priority
+            unoptimized
+          />
+        </figure>
+        <figure className=" dashbord-bg-2">
+          <Image
+            src="/images/Boat.png"
+            alt="background"
+            fill
+            sizes=" (max-width: 100%) 100vw,30vw"
+            priority
+            unoptimized
+          />
+        </figure>
+        <div className="my">
+          <div className="snippet" data-title="dot-pulse">
+            <div className="stage">
+              <div className="dot-pulse"></div>
+            </div>
+          </div>
         </div>
       </div>
     </>

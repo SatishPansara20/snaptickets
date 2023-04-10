@@ -480,11 +480,11 @@
 .scroll_animation {
   position: relative;
   transform: translateY(130px);
-  opacity: 0;
+  /* opacity: 0; */
   transition: 1s all ease;
 }
 
-.scroll_animation.active {
+.scroll_animation_active {
   transform: translateY(0);
   opacity: 1;
 }

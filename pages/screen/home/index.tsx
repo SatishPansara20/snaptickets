@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 
@@ -91,51 +91,51 @@ const cards_2 = [
   },
 ];
 
-// let scrollContent: HTMLElement | null;
+let section_3: HTMLElement | null;
+
+const class_1 = `${styles.scroll_animation_active}`;
+
 export default function Home() {
+  const [scrollFlag, setScrollFlag] = useState(true);
 
   React.useEffect(() => {
+    const hadleScroll = () => {
+      // e.preventDefault();
 
+      section_3 = document.getElementById("section3");
 
-    if (window !== undefined) {
-      // Scroll Animation
-      var scrollContent = document.querySelectorAll("section3");
-
-      if (scrollContent) {
-        console.log(scrollContent);
-
-        for (var i = 0; i < scrollContent?.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = scrollContent[i].getBoundingClientRect().top;
-          var elementVisible = 150;
-
-          if (elementTop < windowHeight - elementVisible) {
-            scrollContent[i].classList.add("active");
-          } else {
-            scrollContent[i].classList.remove("active");
-          }
+      if (section_3) {
+        let elementTop = section_3.getBoundingClientRect().top;
+        var windowHeight = window.innerHeight;
+        var elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          // console.log("added");
+          section_3.classList.add(class_1);
+          // setScrollFlag(false);
+        } else {
+          // console.log("remoed");
+          section_3.classList.remove(class_1);
         }
       }
+    };
+
+    if (typeof window !== "undefined") {
+      document.addEventListener("scroll", hadleScroll, true);
     }
 
-  
-  }, []);
-
-  const hadleScroll = () => {
-    // if (scrollContent) {
-    //   console.log(scrollContent);
-    // for (var i = 0; i < scrollContent.length; i++) {
-    //   var windowHeight = window.innerHeight;
-    //   var elementTop = scrollContent[i].getBoundingClientRect().top;
-    //   var elementVisible = 150;
-    //   if (elementTop < windowHeight - elementVisible) {
-    //     scrollContent[i].classList.add("active");
-    //   } else {
-    //     scrollContent[i].classList.remove("active");
-    //   }
-    // }
-    // }
-  };
+    return () => {
+      window.removeEventListener(
+        "scroll",
+        () => {
+          if (section_3) {
+            section_3.classList.remove(class_1);
+            setScrollFlag(true);
+          }
+        },
+        true
+      );
+    };
+  }, [scrollFlag]);
 
   return (
     <>
@@ -535,6 +535,7 @@ export default function Home() {
                 alt="ellipse"
                 width={167}
                 height={321}
+                priority
               />
             </figure>
 
@@ -554,6 +555,7 @@ export default function Home() {
                 alt="ellipse"
                 width={284}
                 height={284}
+                priority
               />
               <p
                 className={[

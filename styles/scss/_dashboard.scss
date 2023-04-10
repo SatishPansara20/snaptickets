@@ -1,22 +1,145 @@
 .dashbord {
-  height: 500px;
-  background-color: rgb(29, 8, 47);
-}
+  position: relative;
+  height: 100vh;
+  background-color: #e5e5e5;
+  overflow: hidden;
 
-.dashbord-main {
-  flex-grow: 1;
-  width: 100%;
-}
+  .dashbord-bg-2 {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    // background: #ffffff url("/images/dashboard_bg_1.png") no-repeat fiexed right top;
+    // background-size: 100% 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
-.my-class {
-  color: #e11010;
-  &-text {
-    font-size: 25px;
+    img {
+      width: 55% !important;
+      inset: unset !important;
+      right: -10px !important;
+    }
   }
 
-  &-pera {
-    color: bisque;
+  .my {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .snippet {
+      width: 300px;
+      position: relative;
+      background: #fff;
+      padding: 32px 5%;
+      margin: 24px 0;
+      box-shadow: 0 4px 12px -2px rgba(0, 32, 128, 0.1),
+        0 0 0 1px rgba(60, 80, 120, 0.1);
+      border-radius: 16px;
+
+      &:before {
+        display: inline-block;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        padding: 0 8px;
+        content: attr(data-title);
+        font-size: 12px;
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+          "Courier New", monospace;
+        color: white;
+        background-color: rgb(255, 25, 100);
+        border-radius: 10px;
+        line-height: 20px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        outline: 2px solid rgb(255, 25, 100);
+      }
+
+      .stage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 32px 0;
+        margin: 0 -5%;
+        overflow: hidden;
+
+        .dot-pulse {
+          position: relative;
+          left: -9999px;
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          background-color: #9880ff;
+          color: #9880ff;
+          box-shadow: 9999px 0 0 -5px;
+          animation: dot-pulse 1.5s infinite linear;
+          animation-delay: 0.25s;
+        }
+        .dot-pulse::before,
+        .dot-pulse::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          background-color: #9880ff;
+          color: #9880ff;
+        }
+        .dot-pulse::before {
+          box-shadow: 9984px 0 0 -5px;
+          animation: dot-pulse-before 1.5s infinite linear;
+          animation-delay: 0s;
+        }
+        .dot-pulse::after {
+          box-shadow: 10014px 0 0 -5px;
+          animation: dot-pulse-after 1.5s infinite linear;
+          animation-delay: 0.5s;
+        }
+
+        @keyframes dot-pulse-before {
+          0% {
+            box-shadow: 9984px 0 0 -5px;
+          }
+          30% {
+            box-shadow: 9984px 0 0 2px;
+          }
+          60%,
+          100% {
+            box-shadow: 9984px 0 0 -5px;
+          }
+        }
+        @keyframes dot-pulse {
+          0% {
+            box-shadow: 9999px 0 0 -5px;
+          }
+          30% {
+            box-shadow: 9999px 0 0 2px;
+          }
+          60%,
+          100% {
+            box-shadow: 9999px 0 0 -5px;
+          }
+        }
+        @keyframes dot-pulse-after {
+          0% {
+            box-shadow: 10014px 0 0 -5px;
+          }
+          30% {
+            box-shadow: 10014px 0 0 2px;
+          }
+          60%,
+          100% {
+            box-shadow: 10014px 0 0 -5px;
+          }
+        }
+      }
+    }
   }
 }
-
-
